@@ -1,10 +1,11 @@
-import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import { StyleSheet, Text, View } from 'react-native'
+import Loading from '../../components/Loading'
 
-export default function GuestScreen() {
+export default function GuestScreen() {  
   return (
     <View>
-      <Text>GuestScreen!!!</Text>
+        <Text>Navegacion para Guest</Text> 
     </View>
   )
 }

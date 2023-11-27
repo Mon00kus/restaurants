@@ -1,9 +1,28 @@
-import { auth } from './Config'
-export const userIsLogged = (user) =>{
-   let isLogged = false   
-   auth.onAuthStateChanged((user)=>{
-      user !== null && (isLogged=true)
-   })
-   user !== null && (isLogged = true)
-   return isLogged
-}
+import { auth } from './Config';  
+import { getAuth, onAuthStateChanged, currentUser as getCurrentUser } from 'firebase/auth';
+
+
+const userIsLogged = () => {
+   return  new Promise((resolve) => {
+     const unsubscribe = onAuthStateChanged(auth, (user) => {
+       resolve(user !== null);
+       unsubscribe();
+     });
+   });  
+ };
+
+ const currentUser = () => {
+   return new Promise((resolve) => {
+     const unsubscribe = onAuthStateChanged(auth, (user) => {
+       unsubscribe();
+       resolve(user !== null);
+     });
+ 
+     const initialUser = getCurrentUser(auth);
+     if (initialUser !== null) {
+       resolve(true);
+     }
+   });
+ };
+
+ export { userIsLogged, currentUser }

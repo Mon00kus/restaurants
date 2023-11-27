@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
-import { userIsLogged } from '../../fireBase/Actions'
-
-import Parse from 'parse/react-native'
+import { currentUser, userIsLogged } from '../../fireBase/Actions'
 
 import GuestScreen from './GuestScreen'
 import LoggedScreen from './LoggedScreen'
@@ -11,27 +9,21 @@ export default function AccountScreen() {
 
   const [login, setLogin] = useState(null)
 
-  const currentUser = async function() {
-    const curreUser = await Parse.User.currentAsync()
-    if (curreUser!==null){
-       console.log(`${curreUser.get('username')} is the current user!!!`)
-    }
-    return curreUser
-  }
-
   useEffect(() => {
-    setLogin( userIsLogged(currentUser) )
-  }, [])
+    const fetchData = async () => {
+     /*  const currentUsr = await currentUser(); */
+      const isUserLogged = await userIsLogged();
+      setLogin(isUserLogged);
+    };
+
+    fetchData();
+  }, []);
   
-  if (login===null){
+  if (login === null){
     return <Text>Cargando...</Text>
   }
 
-  return (
-    <View>
-      <Text>AccountScreen!!!qqq</Text>
-    </View>
-  )
+  return login ? <LoggedScreen/> : <GuestScreen/>
 }
 
 const styles = StyleSheet.create({})
