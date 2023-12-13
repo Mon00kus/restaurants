@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 
-import LoginScreen from '../screens/LoginScreen/LoginScreen'
-import RegistrationScreen from '../screens/RegistrationScreen/RegistrationScreen'
+import LoginScreen from '../screens/AccountScreen/LoginScreen/LoginScreen'
+import RegistrationScreen from '../screens/AccountScreen/RegistrationScreen/RegistrationScreen'
 import HomeScreen from '../screens/HomeScreen/HomeScreen'
 
 const Stack = createStackNavigator();
@@ -26,6 +26,18 @@ export default function Navigation() {
               <Stack.Screen name="Inside" component={HomeScreen} />
             </>
           )}
+       {/*  {user ? (
+          <>
+            <Stack.Screen name="Ingreso" component={LoginScreen} />
+            <Stack.Screen name="Registro" component={RegistrationScreen} />
+            <Stack.Screen name="Inside" component={HomeScreen} />
+          </>
+        ) : (
+          // 'Home' screen is outside the conditional statement
+          <Stack.Screen name="Home">
+            {props => <HomeScreen {...props} extraData={user} />}
+          </Stack.Screen>
+        )} */}
       </Stack.Navigator>
     </NavigationContainer>
   )

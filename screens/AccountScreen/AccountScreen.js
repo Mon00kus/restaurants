@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
-import { currentUser, userIsLogged } from '../../fireBase/Actions'
+import { userIsLogged } from '../../fireBase/Actions'
 
-import GuestScreen from './GuestScreen'
-import LoggedScreen from './LoggedScreen'
+import GuestScreen from './GuestScreen/GuestScreen'
+import LoggedScreen from './LoggedScreen/LoggedScreen'
+import Loading from '../../components/Loading/Loading'
 
 export default function AccountScreen() {
 
@@ -20,7 +21,7 @@ export default function AccountScreen() {
   }, []);
   
   if (login === null){
-    return <Text>Cargando...</Text>
+    return <Loading isVisible={true} text="Cargando..." />
   }
 
   return login ? <LoggedScreen/> : <GuestScreen/>

@@ -41,8 +41,7 @@ export default function Navigation() {
       />
     )
   }
-  return (
-    
+  return (    
       <bottomTabNavigator.Navigator
          initialRouteName = 'accounts'
          screenOptions={({ route }) => ({

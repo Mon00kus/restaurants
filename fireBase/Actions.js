@@ -1,5 +1,5 @@
 import { auth } from './Config';  
-import { getAuth, onAuthStateChanged, currentUser as getCurrentUser } from 'firebase/auth';
+import { getAuth, onAuthStateChanged, currentUser } from 'firebase/auth';
 
 
 const userIsLogged = () => {
@@ -11,18 +11,18 @@ const userIsLogged = () => {
    });  
  };
 
- const currentUser = () => {
+ const getCurrentUser = () => {
    return new Promise((resolve) => {
      const unsubscribe = onAuthStateChanged(auth, (user) => {
        unsubscribe();
        resolve(user !== null);
      });
  
-     const initialUser = getCurrentUser(auth);
+     const initialUser = currentUser(auth);
      if (initialUser !== null) {
        resolve(true);
      }
    });
  };
 
- export { userIsLogged, currentUser }
+ export { userIsLogged, getCurrentUser }

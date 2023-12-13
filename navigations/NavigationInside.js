@@ -5,10 +5,15 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { Icon } from 'react-native-elements'
 
 import RestaurantScreen from '../screens/RestaurantScreen/RestaurantScreen'
-import FavoriteScreen from '../screens/FavoriteScreen/FavoriteScreen'
 import Top5Screen from '../screens/Top5Screen/Top5Screen'
 import SearchScreen from '../screens/SearchScreen/SearchScreen'
 import AccountScreen from '../screens/AccountScreen/AccountScreen'
+import FavoriteScreen from '../screens/FavoriteScreen/FavoriteScreen'
+import Top5Stack from './Top5Stack'
+import AccountStack from './AccountStack'
+import RestaurantStack from './RestaurantStack'
+import SearchStack from './SearchStack'
+import FavoriteStack from './FavoriteStack'
 
 const bottomTabNavigator = createBottomTabNavigator()
 
@@ -56,27 +61,27 @@ export default function Navigation() {
       >
         <bottomTabNavigator.Screen
                 name="restaurants"
-                component={RestaurantScreen}
+                component={RestaurantStack}
                 options={{title:"Restaurantes"}}         
                 />
         <bottomTabNavigator.Screen                
             name="favorites"
-            component={FavoriteScreen}         
+            component={FavoriteStack}         
             options={{title:"Favoritos"}}         
             />
         <bottomTabNavigator.Screen                
             name="toprestaurants"
-            component={Top5Screen}                
+            component={Top5Stack}                
             options={{title:"Top 5"}}         
             />
         <bottomTabNavigator.Screen                
             name="searchs"
-            component={SearchScreen}
+            component={SearchStack}
             options={{title:"Busquedas"}}
             />   
         <bottomTabNavigator.Screen                
             name="accounts"
-            component={AccountScreen}
+            component={AccountStack}
             options={{title:"Cuentas"}}         
             />
       </bottomTabNavigator.Navigator>
