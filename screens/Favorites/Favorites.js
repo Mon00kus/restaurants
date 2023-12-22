@@ -1,10 +1,10 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-export default function Top5Screen() {
+export default function Favorites() {
   return (
     <View>
-      <Text>Top5 Screen!!!</Text>
+      <Text>Favorites</Text>
     </View>
   )
 }

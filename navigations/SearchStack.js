@@ -1,6 +1,7 @@
+import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
-import SearchScreen from '../screens/SearchScreen/SearchScreen';
+import Search from '../screens/Search/Search';
 
 const Stack = createStackNavigator();
 
@@ -9,7 +10,8 @@ export default function SearchStack() {
     <Stack.Navigator>
        <Stack.Screen
           name='SearchStack'
-          component={SearchScreen}
+          component={Search}          
+          options={{ title : "Busquedas..."}}
        />
     </Stack.Navigator>
   )

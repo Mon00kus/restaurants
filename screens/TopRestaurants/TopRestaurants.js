@@ -1,10 +1,10 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-export default function FavoriteScreen() {
+export default function TopRestaurants() {
   return (
     <View>
-      <Text>Favorite Screen!!!</Text>
+      <Text>Top Restaurantes !!!</Text>
     </View>
   )
 }

@@ -1,17 +1,17 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import Top5Screen from '../screens/Top5Screen/Top5Screen';
+import TopRestaurants from '../screens/TopRestaurants/TopRestaurants'
 
 const Stack = createNativeStackNavigator();
 
-export default function Top5Stack() {
+export default function TopStack() {
   return (
     <Stack.Navigator>
         <Stack.Screen
-            name='top5Stack'
-            component={Top5Screen}
-            options={{title:'Top 5'}}
+            name='topStack'
+            component={TopRestaurants}
+            options={{ title : "Mejores restaurantes"}}
         />
     </Stack.Navigator>
   )

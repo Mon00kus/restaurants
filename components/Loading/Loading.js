@@ -2,8 +2,10 @@ import React from 'react'
 import { ActivityIndicator, StyleSheet, Text, View } from 'react-native'
 import { Overlay } from 'react-native-elements'
 
+import styles from './Styles'
 
-export default function Loading({ isVisible, text}) {
+
+export default function Loading({ isVisible, text }) {
   return (
    <Overlay 
         isVisible = {isVisible}
@@ -24,7 +26,7 @@ export default function Loading({ isVisible, text}) {
   )
 }
 
-const styles = StyleSheet.create({
+/* const styles = StyleSheet.create({
     overlay : {
         height : 100,
         width : 200,
@@ -42,4 +44,4 @@ const styles = StyleSheet.create({
         color: "#442484",
         marginTop: 10
     }
-})
+}) */

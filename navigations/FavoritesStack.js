@@ -1,16 +1,17 @@
+import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
-import FavoriteScreen from '../screens/FavoriteScreen/FavoriteScreen';
+import Favorites from '../screens/Favorites/Favorites'
 
-const Stack = createStackNavigator();
+const Stack = createStackNavigator()
 
 export default function FavoriteStack() {
   return (
     <Stack.Navigator>
       <Stack.Screen
-         name='FavoriteStack'
-         component={FavoriteScreen}
-         options={{title:"Favorites"}}
+         name='favoritesStack'
+         component={Favorites}
+         options={{title:"Favoritos"}}
       />
     </Stack.Navigator>
   )
