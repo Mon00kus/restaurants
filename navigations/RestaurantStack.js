@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import Restaurants from '../screens/Restaurants/Restaurants';
+import Restaurants from '../screens/restaurants/Restaurants';
 
 const Stack = createStackNavigator();
 

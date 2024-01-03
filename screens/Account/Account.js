@@ -1,6 +1,6 @@
 import   React, { useEffect, useState } from 'react'
-import { isUserLogged } from '../../utils/fireBase/Actions'
-import Loading from '../../components/Loading/Loading'
+import { isUserLogged } from '../../utils/Actions'
+import Loading from '../../components/loading/Loading'
 
 import UserLogged from './UserLogged'
 import UserGuest from './UserGuest'

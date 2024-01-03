@@ -38,7 +38,7 @@ export default function Navigation() {
       <Icon
           type = "material-community"
           name = {iconName}
-          size = {22}
+          size = {35}
           color = {color}   
       />
     )
@@ -53,8 +53,8 @@ export default function Navigation() {
               "display" : "flex"
           }, null],
           "tabBarIcon": ({ color }) => screenOptions(route, color),
-          "tabBarActiveTintColor": "#442484",
-          "tabBarInactiveTintColor": "#a17dc3"            
+          "tabBarActiveTintColor": "#9f632a",
+          "tabBarInactiveTintColor": "#dfa35c"            
         })}
       >
         <bottomTabNavigator.Screen 
@@ -64,7 +64,7 @@ export default function Navigation() {
         <bottomTabNavigator.Screen 
           name="restaurants"
           component={RestaurantStack}
-          options={{title:"Restaurantes", headerShown: false}}/>
+          options={{title:"Lugares", headerShown: false}}/>
         <bottomTabNavigator.Screen 
           name="favorites"
           component={FavoriteStack}

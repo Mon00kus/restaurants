@@ -1,9 +1,10 @@
 import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
 
-import Login from '../screens/Account/Login'
-import Account from '../screens/Account/Account'
-import Registration from '../screens/Account/Registration'
+import Login from '../screens/account/Login'
+import Account from '../screens/account/Account'
+
+import Register from '../screens/account/Register'
 
 const Stack = createStackNavigator()
 
@@ -13,7 +14,7 @@ export default function AccountStack() {
       <Stack.Screen 
           name='accountsStack'
           component={Account}
-          options={{title:"Cuentas"}}          
+          options={{title:"Cuenta"}}          
       />
       <Stack.Screen 
           name='Ingreso'
@@ -22,7 +23,7 @@ export default function AccountStack() {
       />
       <Stack.Screen 
           name='Registro'
-          component={Registration}
+          component={Register}
           options={{title:"Registro de usuario"}}
       />
     </Stack.Navigator>
