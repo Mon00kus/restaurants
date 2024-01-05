@@ -1,13 +1,12 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { Text, View } from 'react-native'
 
+import Styles from './Styles'
 
 export default function Restaurants() {
   return (
-    <View style={styles}>
-      <Text>Lugares</Text>
+    <View>
+      <Text>Restaurants</Text>
     </View>
   )
 }
-
-const styles = StyleSheet.create({})

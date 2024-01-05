@@ -2,7 +2,7 @@
 import React from 'react'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 
-import Search from '../screens/search/Search'
+import Searchs from '../screens/searchs/Searchs'
 
 const Stack = createNativeStackNavigator()
 
@@ -11,7 +11,7 @@ export default function SearchStack() {
     <Stack.Navigator>
       <Stack.Screen
         name='SearchStack'
-        component={Search}          
+        component={Searchs}          
         options={{ title : "Busquedas..."}}
       />
     </Stack.Navigator>

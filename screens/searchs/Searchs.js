@@ -3,10 +3,10 @@ import { Text, View } from 'react-native'
 
 import Styles from './Styles'
 
-export default function TopRestaurants() {
+export default function Searchs() {
   return (
     <View>
-    <Text>Tops!!!</Text>
-  </View>
+      <Text>Searchs</Text>
+    </View>
   )
 }

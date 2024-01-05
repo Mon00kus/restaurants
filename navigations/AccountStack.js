@@ -26,21 +26,6 @@ export default function AccountStack() {
         component={Register}
         options={{title:"Registrarse"}}
         />
-      <Stack.Screen 
-          name='accountsStack'
-          component={Account}
-          options={{title:"Cuenta"}}          
-      />
-      <Stack.Screen 
-          name='Ingreso'
-          component={Login}
-          options={{title:"Iniciar sesión"}}
-      />
-      <Stack.Screen 
-          name='Registro'
-          component={Register}
-          options={{title:"Registro de usuario"}}
-      />
     </Stack.Navigator>
   )
 }
