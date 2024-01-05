@@ -1,3 +1,4 @@
+
 import React from 'react'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 
@@ -9,6 +10,7 @@ export default function RestaurantStack() {
   return (
     <Stack.Navigator>
       <Stack.Screen 
+
         name='restaurantsStack'
         component={Restaurants}     
         options={{ title : "Nuestros Restaurantes"}}     
@@ -16,3 +18,5 @@ export default function RestaurantStack() {
     </Stack.Navigator>
   )
 }
+
+

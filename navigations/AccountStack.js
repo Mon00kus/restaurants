@@ -1,4 +1,5 @@
 import React from 'react'
+
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 
 import Account from '../screens/account/account/Account'
@@ -10,6 +11,7 @@ const Stack = createNativeStackNavigator()
 export default function AccountStack() {
   return (
     <Stack.Navigator>
+
       <Stack.Screen
         name='account'
         component={Account}
@@ -24,6 +26,21 @@ export default function AccountStack() {
         name='register'
         component={Register}
         options={{title:"Registrarse"}}
+        />
+      <Stack.Screen 
+          name='accountsStack'
+          component={Account}
+          options={{title:"Cuenta"}}          
+      />
+      <Stack.Screen 
+          name='Ingreso'
+          component={Login}
+          options={{title:"Iniciar sesión"}}
+      />
+      <Stack.Screen 
+          name='Registro'
+          component={Register}
+          options={{title:"Registro de usuario"}}
       />
     </Stack.Navigator>
   )
