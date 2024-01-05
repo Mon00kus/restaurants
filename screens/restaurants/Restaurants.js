@@ -6,7 +6,7 @@ import Styles from './Styles'
 export default function Restaurants() {
   return (
     <View>
-      <Text>Restaurants</Text>
+      <Text>Restaurants...!!!</Text>
     </View>
   )
 }

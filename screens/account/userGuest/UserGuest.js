@@ -6,7 +6,7 @@ import Styles from './Styles'
 export default function UserGuest() {
   return (
     <View>
-      <Text>UserGuest</Text>
+      <Text>UserGuest!!!</Text>
     </View>
   )
 }

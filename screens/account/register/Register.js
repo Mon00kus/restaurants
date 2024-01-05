@@ -6,7 +6,7 @@ import Styles from './Styles'
 export default function Register() {
   return (
     <View>
-      <Text>Register</Text>
+      <Text>Register!!!</Text>
     </View>
   )
 }

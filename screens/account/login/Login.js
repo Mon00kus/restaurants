@@ -6,7 +6,7 @@ import Styles from './Styles'
 export default function Login() {
   return (
     <View>
-      <Text>Login</Text>
+      <Text>Login!!!</Text>
     </View>
   )
 }

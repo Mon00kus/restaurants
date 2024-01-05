@@ -6,7 +6,7 @@ import Styles from './Styles'
 export default function UserLogged() {
   return (
     <View>
-      <Text>UserLogged</Text>
+      <Text>UserLogged!!!</Text>
     </View>
   )
 }

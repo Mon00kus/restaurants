@@ -6,7 +6,7 @@ import Styles from './Styles'
 export default function Favorites() {
   return (
     <View>
-      <Text>Favorites</Text>
+      <Text>Favorites...!!!</Text>
     </View>
   )
 }
