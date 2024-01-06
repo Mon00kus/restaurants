@@ -1,9 +1,8 @@
 import React from 'react'
-import { ActivityIndicator, StyleSheet, Text, View } from 'react-native'
+import { ActivityIndicator, Text, View } from 'react-native'
 import { Overlay } from 'react-native-elements'
 
 import styles from './Styles'
-
 
 export default function Loading({ isVisible, text }) {
   return (

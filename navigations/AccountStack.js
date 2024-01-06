@@ -14,17 +14,17 @@ export default function AccountStack() {
       <Stack.Screen
         name='account'
         component={Account}
-        options={{title:"Cuenta"}}
+        options={{title:"Tu cuenta"}}
         />
       <Stack.Screen
         name='login'
         component={Login}
-        options={{title:"Ingresar"}}
+        options={{title:"Ingreso a la aplicación"}}
         />
       <Stack.Screen
         name='register'
         component={Register}
-        options={{title:"Registrarse"}}
+        options={{title:"Registrarse en la aplicación"}}
         />
     </Stack.Navigator>
   )
