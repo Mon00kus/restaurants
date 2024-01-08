@@ -1,12 +1,25 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import { Image, View } from 'react-native'
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
+import RegisterForm from '../../../components/account/RegisterForm'
+
 
 import Styles from './Styles'
 
 export default function Register() {
   return (
     <View>
-      <Text>Register!!!</Text>
+      <KeyboardAwareScrollView
+        /* centerContent={true}  */
+        style={Styles.viewBody}
+      >
+        <Image 
+          source={require("../../../assets/takoLogo.png")}
+          resizeMode='contain'
+          style={Styles.image}
+        />  
+        <RegisterForm />
+      </KeyboardAwareScrollView>
     </View>
   )
 }
