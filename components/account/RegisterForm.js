@@ -51,7 +51,7 @@ export default function RegisterForm() {
     setLoading(false)
 
     if (!result.statusResponse){
-      setErrorButton(result.error)
+      setErrorEmail(result.error)
       return
     }
 
