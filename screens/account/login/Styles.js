@@ -17,6 +17,9 @@ export default StyleSheet.create({
     loginFooterText: {
         fontSize: 16,
         color: "#2e2e2d",
+        marginTop : 15,
+        alignItems : "center",
+        alignSelf : "center"
     },
     footerLinkRegistro: {
         color: "#788eec",
@@ -24,6 +27,6 @@ export default StyleSheet.create({
         fontSize: 16,
         marginTop: 15,
         marginHorizontal: 10,
-        alignSelf: "center",
+        alignSelf: "center",        
     }
 })

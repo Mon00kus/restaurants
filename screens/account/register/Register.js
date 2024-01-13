@@ -1,7 +1,7 @@
 import React from 'react'
 import { Image, View } from 'react-native'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
-import RegisterForm from '../../../components/account/RegisterForm'
+import RegisterForm from '../../../components/account/registerForm/RegisterForm'
 
 
 import Styles from './Styles'

@@ -5,14 +5,14 @@ import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view
 import { useNavigation } from '@react-navigation/native'
 import { size } from 'lodash'
 
-import { validateEmail } from '../../utils/Helpers'
-import { registerUser } from '../../utils/Actions'
-import Loading from '../Loading/Loading'
+import { validateEmail } from '../../../utils/Helpers'
+import { registerUser } from '../../../utils/Actions'
+import Loading from '../../Loading/Loading'
 
 import Styles from './Styles'
 
 export default function RegisterForm() {
-  /* const [fullName, setFullName] = useState("") */
+
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [confirm, setConfirmPassword] = useState("")
@@ -20,7 +20,6 @@ export default function RegisterForm() {
   const [isConfirmPasswordIconPressed, setIsConfirmPasswordIconPressed] = useState(false)
   const [formData, setFormData] = useState(defaultFormValues())
   
-  /* const [errorFullName, setErrorFullName] = useState("") */
   const [errorEmail, setErrorEmail] = useState("")
   const [errorPassword, setErrorPassword] = useState("")
   const [errorConfirm, setErrorConfirm] = useState("")
@@ -58,17 +57,11 @@ export default function RegisterForm() {
     navigation.navigate("account")
   }
 
-
   const validateData = () => {
     setErrorConfirm("")
     setErrorEmail("")
     setErrorPassword("")
     let isValid = true
-
-    /* if (formData.fullName==='') {
-      setErrorFullName("Debes ingresar un nombre para lu local.")
-      isValid = false
-    } */
 
     if(!validateEmail(formData.email)) {
         setErrorEmail("Debes ingresar un email válido.")
@@ -99,15 +92,6 @@ export default function RegisterForm() {
       style = {Styles.form}
       > 
       <KeyboardAwareScrollView>
-     {/*    <Input  }
-          value={fullName} 
-          {defaultValue={fullName}
-          onChangeText={(text) => setFullName(text)}
-          containerStyle = {Styles.input}        
-          placeholder='Ingresa tu Nombre...'
-          onChange={(e)=> onChange(e, "fullName")}
-          errorMessage={errorFullName}
-        /> */} 
         <Input 
           defaultValue={email}
           onChangeText={(text) => setEmail(text)}
@@ -172,5 +156,5 @@ export default function RegisterForm() {
 }
 
 const defaultFormValues = () => {
-  return {/* fullName: '', */ email: '', password :'', confirm : ''}
+  return {email: '', password :'', confirm : ''}
 }

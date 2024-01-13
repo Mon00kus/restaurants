@@ -5,6 +5,7 @@ import { Divider } from 'react-native-elements'
 import { useNavigation } from '@react-navigation/native'
 
 import Styles from './Styles'
+import LoginForm from '../../../components/account/loginForm/LoginForm'
 
 export default function Login() {
   const navigation = useNavigation()
@@ -22,8 +23,7 @@ export default function Login() {
         style={Styles.image}>
       </Image>
       <View>
-        <Text> --- Formulario de Ingreso --- </Text>
-        <Divider style = {Styles.divider} />
+        <LoginForm/>        
         <CreateAccount/>        
       </View>
       </KeyboardAwareScrollView>
@@ -33,7 +33,7 @@ export default function Login() {
     const navigation = useNavigation()
     return (
       <Text onPress={()=>navigation.navigate('register')} 
-            style={styles.loginFooterText}>
+            style={Styles.loginFooterText}>
             Aun no tienes cuenta? {" "}
           <Text style={Styles.footerLinkRegistro}> Registrate </Text>
       </Text>

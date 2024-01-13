@@ -9,7 +9,7 @@ export const isUserLogged = async () => {
     return isLogged
 }
 
-export const getCurrentUser = () => {
+export const getCurrentUser = () => {        
     return Auth.currentUser
 }
 
@@ -24,6 +24,17 @@ export const registerUser = async (email, password) => {
     } catch (error) {        
         result.statusResponse = false
         result.error = 'Usuario existente ó password invalido'
+    }
+    return result
+}
+
+export const loginWithEmailAndPassword  = async(email, password) => {
+    const result = {statusResponse : true, error: null}
+    try {
+        await Auth.signInWithEmailAndPassword(email, password)
+    } catch (error) {
+        result.statusResponse = false
+        result.error = "Usuario ó contraseña invalidos"
     }
     return result
 }

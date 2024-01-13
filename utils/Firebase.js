@@ -1,6 +1,7 @@
 import firebase from 'firebase/compat/app'
 import 'firebase/compat/auth'
 import 'firebase/compat/firestore'
+import 'firebase/compat/storage'
 
 const firebaseConfig =  {
   apiKey: "AIzaSyBksuJLeTRD6zW2kbCxE4OkzTgHZEdiQq8",
@@ -15,3 +16,4 @@ const firebasebApp = firebase.initializeApp(firebaseConfig, 'restaurants')
 
 export const Db = firebasebApp.firestore()
 export const Auth = firebasebApp.auth()
+export const St = firebasebApp.storage()
