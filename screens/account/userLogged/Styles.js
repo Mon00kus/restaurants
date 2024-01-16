@@ -19,8 +19,10 @@ export default StyleSheet.create({
     },
     button: {        
         height : 48,
+        width : "90%",
         marginTop: 10,
-        marginBottom: 10,
+        marginBottom: 10,        
+        alignSelf:"center",
         backgroundColor: "#fbce24",        
         color:"#9f632a",        
         borderRadius: 15

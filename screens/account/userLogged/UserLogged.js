@@ -8,6 +8,7 @@ import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view
 import { closeSession, getCurrentUser } from '../../../utils/Actions'
 import Loading from '../../../components/Loading/Loading'
 import InfoUser from '../../../components/infoUser/InfoUser'
+import AccountOptions from '../accountOptions/AccountOptions'
 
 import Styles from './Styles'
 
@@ -21,7 +22,7 @@ export default function UserLogged() {
   const [user, setUser] = useState(null)
   const [reloader, setReloader] = useState(false)
 
-  useEffect(()=>{
+  useEffect(() => {
     setUser(getCurrentUser())
     setReloader(false)
   }, [reloader])
@@ -30,16 +31,21 @@ export default function UserLogged() {
     <View
       style={Styles.container}
     >
-      <KeyboardAwareScrollView>
+      <KeyboardAwareScrollView
+        centerContent = {true}  
+      >
       {
           user && (
             <View>            
-              <InfoUser 
+              <InfoUser
                 user={user}
                 setLoading={setLoading}
                 setLoadingText={setLoadingText}
               />
-              <Text>Account Options</Text>
+              <AccountOptions
+                user={user}
+                toastRef={toastRef}
+              />
             </View>
           )
         }

@@ -9,8 +9,7 @@ import Styles from './Styles'
 export default function Register() {
   return (
     <View>
-      <KeyboardAwareScrollView
-        /* centerContent={true}  */
+      <KeyboardAwareScrollView        
         style={Styles.viewBody}
       >
         <Image 

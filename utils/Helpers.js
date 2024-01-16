@@ -1,4 +1,3 @@
-import * as Permissions from 'expo-permissions'
 import * as Locations from 'expo-location'
 import * as ImagePicker from 'expo-image-picker'
 import { Alert } from 'react-native';
@@ -24,7 +23,12 @@ export const loadImageFromGallery = async(array) => {
         return response
     }
     response.status = true
-    response.image = result.assets[0].uri
-    console.log("What ever-->"+ result.assets[0].uri)
+    response.image = result.assets[0].uri    
     return response
 }   
+
+export const fileToBlob = async(path) => {
+    const file = await fetch(path)
+    const blob = await file.blob()
+    return blob
+}

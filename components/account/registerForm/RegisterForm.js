@@ -13,6 +13,7 @@ import Styles from './Styles'
 
 export default function RegisterForm() {
 
+  const [fullName, setFullName] = useState("")
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [confirm, setConfirmPassword] = useState("")
@@ -20,6 +21,7 @@ export default function RegisterForm() {
   const [isConfirmPasswordIconPressed, setIsConfirmPasswordIconPressed] = useState(false)
   const [formData, setFormData] = useState(defaultFormValues())
   
+  const [errorFullName, setErrorFullName] = useState("")
   const [errorEmail, setErrorEmail] = useState("")
   const [errorPassword, setErrorPassword] = useState("")
   const [errorConfirm, setErrorConfirm] = useState("")
@@ -46,7 +48,7 @@ export default function RegisterForm() {
     }
 
     setLoading(true)
-    const result = await registerUser(formData.email, formData.password)
+    const result = await registerUser(formData.email, formData.password, formData.fullName)
     setLoading(false)
 
     if (!result.statusResponse){
@@ -58,29 +60,35 @@ export default function RegisterForm() {
   }
 
   const validateData = () => {
-    setErrorConfirm("")
+    setErrorFullName("")
     setErrorEmail("")
     setErrorPassword("")
+    setErrorConfirm("")
     let isValid = true
 
+    if (size(formData.fullName)==0){
+      setErrorFullName("Debes agregar un Nombre de usuario")
+      isValid = false
+    }
+
     if(!validateEmail(formData.email)) {
-        setErrorEmail("Debes ingresar un email válido.")
+        setErrorEmail("Debes ingresar un email válido")
         isValid = false
     }
 
     if(size(formData.password) < 6) {
-        setErrorPassword("Contraseña debe tener al menos seis carácteres.")
+        setErrorPassword("Contraseña debe tener al menos seis carácteres")
         isValid = false
     }
 
     if(size(formData.confirm) < 6) {
-        setErrorConfirm("Confirmación de contraseña debe tener al menos seis carácteres.")
+        setErrorConfirm("Confirmación de contraseña debe tener al menos seis carácteres")
         isValid = false
     }
 
     if(formData.password !== formData.confirm) {
-        setErrorPassword("La contraseña y la confirmación no son iguales.")
-        setErrorConfirm("La contraseña y la confirmación no son iguales.")
+        setErrorPassword("La contraseña y la confirmación no son iguales")
+        setErrorConfirm("La contraseña y la confirmación no son iguales")
         isValid = false
     }
 
@@ -92,6 +100,13 @@ export default function RegisterForm() {
       style = {Styles.form}
       > 
       <KeyboardAwareScrollView>
+        <Input
+          defaultValue={fullName}
+          onChangeText={(text) => setFullName(text)}
+          placeholder='Ingresa tu nombre...'
+          onChange={(e)=> onChange(e,"fullName")}
+          errorMessage={errorFullName}
+        />
         <Input 
           defaultValue={email}
           onChangeText={(text) => setEmail(text)}
@@ -156,5 +171,5 @@ export default function RegisterForm() {
 }
 
 const defaultFormValues = () => {
-  return {email: '', password :'', confirm : ''}
+  return {fullName: '', email: '', password :'', confirm : ''}
 }
