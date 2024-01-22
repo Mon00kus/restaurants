@@ -20,7 +20,7 @@ export default StyleSheet.create({
     button: {        
         height : 48,
         width : "90%",
-        marginTop: 10,
+        marginTop: 40,
         marginBottom: 10,        
         alignSelf:"center",
         backgroundColor: "#fbce24",        

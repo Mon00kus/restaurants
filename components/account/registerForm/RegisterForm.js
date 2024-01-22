@@ -12,7 +12,6 @@ import Loading from '../../Loading/Loading'
 import Styles from './Styles'
 
 export default function RegisterForm() {
-
   const [fullName, setFullName] = useState("")
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
@@ -32,70 +31,55 @@ export default function RegisterForm() {
   const onChange = (e, type) => {
     setFormData({...formData, [type]: e.nativeEvent.text})
   }
-
   const onPasswordIconPress = () => {
       setIsPasswordIconPressed(!isPasswordIconPressed)
   }
-
   const onConfirmPasswordIconPress = () => {
       setIsConfirmPasswordIconPressed(!isConfirmPasswordIconPressed)
   }
-
   const onRegisterPress = async (formData) => {
-
     if (!validateData()) {
       return
     }
-
     setLoading(true)
     const result = await registerUser(formData.email, formData.password, formData.fullName)
     setLoading(false)
-
     if (!result.statusResponse){
       setErrorEmail(result.error)
       return
     }
-
     navigation.navigate("account")
   }
-
   const validateData = () => {
     setErrorFullName("")
     setErrorEmail("")
     setErrorPassword("")
     setErrorConfirm("")
     let isValid = true
-
     if (size(formData.fullName)==0){
       setErrorFullName("Debes agregar un Nombre de usuario")
       isValid = false
     }
-
     if(!validateEmail(formData.email)) {
         setErrorEmail("Debes ingresar un email válido")
         isValid = false
     }
-
     if(size(formData.password) < 6) {
         setErrorPassword("Contraseña debe tener al menos seis carácteres")
         isValid = false
     }
-
     if(size(formData.confirm) < 6) {
         setErrorConfirm("Confirmación de contraseña debe tener al menos seis carácteres")
         isValid = false
     }
-
     if(formData.password !== formData.confirm) {
         setErrorPassword("La contraseña y la confirmación no son iguales")
         setErrorConfirm("La contraseña y la confirmación no son iguales")
         isValid = false
     }
-
     return isValid
 }
-
-  return (
+return (
     <View 
       style = {Styles.form}
       > 

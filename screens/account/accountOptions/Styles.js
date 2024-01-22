@@ -7,4 +7,8 @@ export default StyleSheet.create({
         backgroundColor: "#f9f9f9",
         paddingVertical: 30
     },
+    menuItem : {
+        borderBottomWidth : 1,
+        borderBottomColor : "#a7bfd3"
+    }
 })
