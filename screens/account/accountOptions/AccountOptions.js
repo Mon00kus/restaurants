@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
-import { View, Text } from 'react-native'
+import { View } from 'react-native'
 import { Icon, ListItem } from 'react-native-elements'
 import { map } from 'lodash'
 
 import Modal from '../../../components/modal/Modal'
-import ChangeDisplayNameForm from '../../../components/account/changeDisplayNameForm.js/ChangeDisplayNameForm'
+import ChangeDisplayNameForm from '../../../components/account/changeDisplayNameForm/ChangeDisplayNameForm'
 import ChangeEmailForm from '../../../components/account/changeEmailForm/ChangeEmailForm'
 
 

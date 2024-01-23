@@ -22,10 +22,8 @@ export default function UserLogged() {
   const [user, setUser] = useState(null)
   const [reloader, setReloader] = useState(false)
 
-  useEffect(() => {
-    const userInfo = getCurrentUser();
-    console.log("Información del usuario:", userInfo);
-    setUser(userInfo);    
+  useEffect(() => {    
+    setUser(getCurrentUser());
     setReloader(false);
   }, [reloader])
 

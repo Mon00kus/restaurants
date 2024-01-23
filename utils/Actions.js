@@ -61,7 +61,6 @@ export const uploadImage = async (Image, path, name) => {
 export const updateProfile = async (data) => {
   const result = { statusResponse: true, error: null };
   try {
-    console.log("En ations : " + data);
     await Auth.currentUser.updateProfile(data);
   } catch (error) {
     result.statusResponse = false;
