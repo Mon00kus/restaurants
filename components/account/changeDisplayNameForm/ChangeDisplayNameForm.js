@@ -5,18 +5,28 @@ import { Button } from "react-native-elements/dist/buttons/Button";
 import { isEmpty } from "lodash";
 
 import Styles from "./Styles";
+import { updateProfile } from "../../../utils/Actions";
 
-export default function ChangeDisplayNameForm({ displayName, setShowModal, toastRef }) {
+export default function ChangeDisplayNameForm({ displayName, setShowModal, toastRef, setReLoadUser }) {
 
   const [newDisplayname, setNewDisplayName] = useState(null);
   const [error, setError] = useState(null);
-
+  const [loading, setLoading] = useState(false);   
 
   const onSubmit = async () => {
     if (!validateForm()) {
       return;
     }
-    console.log('Great!!');
+    setLoading(true);
+    const result = await updateProfile({ displayName : newDisplayname });
+    setLoading(false);
+    if (!result.statusResponse){
+      setError("Error al actualizar...");
+      return;
+    }
+    setReLoadUser(true);
+    toastRef.current.show('Nombre actualizado', 2000);
+    setShowModal(false);
   };
 
   const validateForm = () => {
@@ -53,6 +63,7 @@ export default function ChangeDisplayNameForm({ displayName, setShowModal, toast
         containerStyle={Styles.buttonContainer}
         buttonStyle={Styles.button}
         onPress={onSubmit}
+        loading={loading}
       />
     </View>
   );
