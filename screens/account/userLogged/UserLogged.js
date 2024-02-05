@@ -7,7 +7,7 @@ import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view
 
 import { closeSession, getCurrentUser } from "../../../utils/Actions";
 import Loading from "../../../components/Loading/Loading";
-import InfoUser from "../../../components/infoUser/InfoUser";
+import InfoUser from "../../../components/account/infoUser/InfoUser";
 import AccountOptions from "../accountOptions/AccountOptions";
 
 import Styles from "./Styles";

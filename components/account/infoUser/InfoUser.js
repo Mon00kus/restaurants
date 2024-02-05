@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Alert, Text, View } from "react-native";
 import { Avatar } from "react-native-elements";
-import { size } from "lodash";
 
-import { loadImageFromGallery } from "../../utils/Helpers";
-import { updateProfile, uploadImage } from "../../utils/Actions";
+import { loadImageFromGallery } from "../../../utils/Helpers";
+import { updateProfile, uploadImage } from "../../../utils/Actions";
 
 import Styles from "./Styles";
 
@@ -44,7 +43,7 @@ export default function InfoUser({ user, setLoading, setLoadingText }) {
         size={"large"}
         onPress={changePhoto}                
         source={
-          photoUrl ? {uri : photoUrl} : require("../../assets/avatar-default.png")
+          photoUrl ? {uri : photoUrl} : require("../../../assets/avatar-default.png")
         }
       />
       <View style={Styles.infoUser}>

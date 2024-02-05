@@ -2,7 +2,6 @@ import { Auth, St } from "./Firebase";
 import * as Notifications from "expo-notifications";
 import { fileToBlob } from "./Helpers";
 import { Alert } from "react-native";
-import { isSearchBarAvailableForCurrentPlatform } from "react-native-screens";
 
 export const isUserLogged = async () => {
   let isLogged = false;
@@ -68,6 +67,30 @@ export const updateProfile = async (data) => {
   }
   return result;
 };
+
+export const reAuthenticate = async(password) => {
+  const result = { statusResponse: true, error: null };
+  const user = getCurrentUser();
+  const credentials = Auth.currentUser.reauthenticateWithCredential(user, password);
+  try {
+    await user.reauthenticateWithCredential(credentials);
+  } catch (error) {    
+    result.statusResponse = false;
+    result.error = error;    
+  }
+  return result;
+}
+
+export const updateEmail = () => {
+  const result = { statusResponse: true, error: null };
+  try {
+    Auth.currentUser.updateEmail(email);
+  } catch (error) {
+    result.statusResponse = false
+    result.error = error
+  }
+  return result;
+}
 
 export const getToken = async () => {
   if (!Constans.isDevice) {
